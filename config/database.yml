@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: language-school_development
+
+test:
+  <<: *default
+  database: language-school_test
+
+production:
+  <<: *default
+  database: language-school_production
+  username: language-school
+  password: <%= ENV['LANGUAGE-SCHOOL_DATABASE_PASSWORD'] %>
