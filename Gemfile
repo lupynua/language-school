@@ -30,6 +30,7 @@ group :development, :test do
   gem 'codeclimate-test-reporter', '~> 0.4.7'
 end
 
+
 group :production do
   gem 'rails_12factor', '~> 0.0.3'
   gem 'uglifier', '~> 1.3.0'
