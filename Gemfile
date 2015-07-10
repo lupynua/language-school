@@ -12,6 +12,7 @@ gem 'haml'
 gem 'cancan'
 gem 'geocoder'
 gem 'devise'
+gem 'carrierwave'
 
 group :development, :test do
   gem 'spring'
