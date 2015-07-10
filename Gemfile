@@ -17,6 +17,7 @@ gem 'responders', '~> 2.1.0'
 gem 'mini_magick', '~> 4.2.7'
 gem 'bootbox-rails', '~>0.4'
 gem 'tinymce-rails'
+gem 'rails-i18n', '~> 4.0.0'
 
 group :development, :test do
   gem 'spring'

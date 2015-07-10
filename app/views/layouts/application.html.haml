@@ -1,17 +1,18 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title LanguageSchool
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %title Language School
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
   
   %body
-    .container
+    = react_component 'Navbar', {}, :nav
+    .container.main-container
       - if notice.present?
         %p.notice= notice
       - if alert.present?
         %p.alert= alert
-
-      = react_router 'Router', 'HashLocation'
+      =react_router 'Router', 'HashLocation'
+    = react_component 'Footer', {}, :footer
