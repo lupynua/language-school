@@ -10,4 +10,6 @@
 //= require_tree ./models
 //= require_tree ./collections
 //= require_tree ./components
+//= require tinymce
+//= require bootbox
 //= require_tree .
