@@ -17,6 +17,8 @@ group :development, :test do
   gem 'spring'
   gem 'pry'
   gem 'better_errors'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl'
 end
 
 gem 'rails_12factor', group: :production
