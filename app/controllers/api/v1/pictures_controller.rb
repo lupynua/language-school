@@ -2,17 +2,18 @@ class Api::V1::PicturesController < ApplicationController
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
 
   def index
-    respond_with(@pictures = Picture.all)
+    @album = Album.find(params[:album_id])
+    # select only those pictures which belongs to the specified album
+    respond_with(@pictures = Picture.select{|picture| picture.album_id == @album.id})
   end
 
   def show
-     respond_with(@picture = Picture.find(params[:id]))
-    @album = @picture.album_id
+    respond_with(@picture = Picture.find(params[:id]))
   end
 
   def new
     @album = Album.find(params[:album_id])
-     respond_with(@picture = Picture.new(:album_id => @album.id)) #@album.pictures.build
+    respond_with(@picture = Picture.new(:album_id => @album.id)) #@album.pictures.build
   end
 
   def edit

@@ -4,6 +4,8 @@ var DefaultRoute = ReactRouter.DefaultRoute,
 
 var Router = (
   <Route handler={App}>
-    {/* put routes */}
+    <Route name='albums' handler={Albums} path='/albums' />
+    <Route name='albumNew' handler={AlbumNew} path='/albums/new' /> /*(!)write /albums/new before /albums/:albumId, otherwise new will be treated as id */
+    <Route name='album' handler={Album} path='/albums/:albumId' />
   </Route>
 );

@@ -2,8 +2,7 @@ class Api::V1::AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
 
   def index
-     respond_with(@albums = Album.all)
-     @pictures = Picture.all
+    respond_with(@albums = Album.all)
   end
 
   def show
