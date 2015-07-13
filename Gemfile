@@ -12,7 +12,9 @@ gem 'haml'
 gem 'cancan'
 gem 'geocoder'
 gem 'devise'
-gem 'carrierwave'
+gem 'carrierwave', '~> 0.10.0'
+gem 'responders', '~> 2.1.0'
+gem 'mini_magick', '~> 4.2.7'
 
 group :development, :test do
   gem 'spring'
