@@ -1,7 +1,8 @@
 //global object for storing Backbone entities
 var Bb = {
   Models: {},
-  Collections: {}
+  Collections: {},
+  Helpers: {}
 };
 
 // main React component

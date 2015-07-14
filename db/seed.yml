@@ -14,3 +14,52 @@ articles:
     status: 0
     title: Coldplay "Speed of Sound"
     body: <p><strong>Speed of Sound</strong> одна з найвідоміших пісень британської рок-групи <strong>Coldplay</strong>, у написанні якої брали участь усі члени групи. Ставши першим синглом з третього студійного альбому <strong>Coldplay X & Y</strong>, вона вийшла навесні 2005 року і відразу ж потрапила в <em>UK Singles Chart</em>, де і залишалася номером 1 в <strong>Top 75</strong> протягом 16 тижнів. Журнал <em>The Village Voice</em> назвав пісню <em>"unusually accomplished, fresh, and emotional"</em>.</p><p>Незважаючи на такий успіх, вокаліст групи <strong>Chris Martin</strong> зізнався, що <strong>"Speed of Sound"</strong> одна з найменш улюблених ним композицій. Група практично ніколи не грає її на концертах, і в своїх численних інтерв'ю <strong>Martin</strong> пояснює, що йому не подобається те, як звучить пісня в запису (Recording).</p>
+    
+events:
+  - id: 1
+    name: "Reading the best poems by Lord Byron"
+    description: "I had a dream, which was not all a dream.
+                  The bright sun was extinguish’d, and the stars
+                  Did wander darkling in the eternal space,
+                  Rayless, and pathless, and the icy earth"
+    capacity: 15
+    date: 2015-08-01 12:00
+    place: Lviv Franko National University
+    latitude: 49.84061
+    longitude: 24.02251
+
+  - id: 2
+    name: "Presentation of a new book"
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus aliquam orci sit amet pellentesque placerat.
+                  Quisque suscipit tellus sit amet placerat volutpat.
+                  Suspendisse sit amet libero magna. "
+    capacity: 15
+    date: 2015-09-01 12:00
+    place: Pasternaka St., 5, Lviv
+    latitude: 49.83273
+    longitude: 23.99922
+
+  - id: 3
+    name: "Halloween Party"
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus aliquam orci sit amet pellentesque placerat.
+                  Quisque suscipit tellus sit amet placerat volutpat.
+                  Suspendisse sit amet libero magna. "
+    capacity: 50
+    date: 2015-11-01 18:00
+    place: Pasternaka St., 5, Lviv
+    latitude: 49.83273
+    longitude: 23.99922
+
+  - id: 4
+    name: "Presentation"
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus aliquam orci sit amet pellentesque placerat.
+                  Quisque suscipit tellus sit amet placerat volutpat.
+                  Suspendisse sit amet libero magna. "
+    capacity: 15
+    date: 2015-09-01 12:00
+    place: Pasternaka St., 5, Lviv
+    latitude: 49.83273
+    longitude: 23.99922
