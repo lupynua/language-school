@@ -1,3 +1,13 @@
 //= require jquery
 //= require jquery_ujs
+//= require react
+//= require react_ujs
+//= require react_router
+//= require react_router_ujs
+//= require underscore
+//= require backbone
+//= require app
+//= require_tree ./models
+//= require_tree ./collections
+//= require_tree ./components
 //= require_tree .
