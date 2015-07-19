@@ -23,15 +23,18 @@ var Albums  = React.createClass({
   render: function () {
     return (
       <div className='row'>
-        <h1>Albums list</h1>
+        <h1>Albums</h1>
         {this.state.albums.map(function(album) {
           return <AlbumView key = {album.id}
                             id = {album.id}
                             image = {album.pictures[0] ? album.pictures[0].image.url : 'assets/sample.jpg'}
+                            title = {album.title}
                             description = {album.description}
                             author = {album.user_id}/>;                       
-        })}
-                 <NewAlbum  />
+        })}      
+                <div className='col-md-12 well' >
+                  <NewAlbumLink  />
+                </div>
       </div>
     ); 
   }
@@ -85,10 +88,11 @@ var AlbumAuthor = React.createClass({
   }
 });
 
-var NewAlbum = React.createClass({
+var NewAlbumLink = React.createClass({
   render: function() {
     return (
         <Link to={'albumNew'}>New album</Link>
     );
   }
 });
+

@@ -6,3 +6,4 @@ User::HABTM_Articles.create(config["articles_users"])
 Event.create(config["events"])
 Book.create(config["books"])
 
+

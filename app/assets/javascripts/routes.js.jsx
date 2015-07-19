@@ -5,6 +5,12 @@ var DefaultRoute = ReactRouter.DefaultRoute,
 var Router = (
   <Route handler={App}>
    <DefaultRoute handler={FrontPage} />
+  /*albums*/
+    <Route name='albums' handler={Albums} path='/albums' />
+    <Route name='albumNew' handler={AlbumNew} path='/albums/new' /> 
+    <Route name='album' handler={Album} path='/albums/:albumId' />
+    <Route name='albumEdit' handler={AlbumEdit} path='/albums/:albumId/edit' />
+    <Route name='pictureNew' handler={PictureNew} path='/albums/:albumId/pictures/new' />
 
    <Route path='/menus' name='menus' handler={Menus} />
    <Route path='/menus/new' name='new_menu' handler={NewMenu} />

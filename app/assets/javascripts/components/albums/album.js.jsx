@@ -1,7 +1,8 @@
 var Album = React.createClass({
+  mixins: [ReactRouter.Navigation],
   getInitialState: function () {
     return {
-      album: {}, 
+      album: {},
       pictures: []
     };
   },
@@ -10,15 +11,32 @@ var Album = React.createClass({
     this.album.fetch({
       success: function(model, response, options) {
         this.setState({ album: model.toJSON(), pictures: model.toJSON().pictures});
-         // console.log(model.toJSON().pictures);
       }.bind(this),
       error: function(model, response, options) {
         console.log(response.status);
       }
-    });  
+    });
   },
   componentWillUnmount: function () {
     this.album.off('change');
+  },
+
+  onDeleteAlbum: function(id) {
+    var confirmation = confirm("Are you sure?");
+    if(confirmation == true) {
+      var album = new Bb.Models.Album({id: id}); {/*some starnge bugs here O_O. solved: write dataType: "text" */}
+      album.destroy({
+        success: function(model, response, options) {
+          this.transitionTo('albums');
+        }.bind(this),
+        error: function(model, response, options) {
+        }.bind(this),
+        dataType: "text"
+      });
+    }
+    else {
+      return;
+    }
   },
 
   render: function () {
@@ -26,32 +44,25 @@ var Album = React.createClass({
       <div>
         <AlbumShow title = {this.state.album.title}
                    description = {this.state.album.description}
-                   album = {this.state.album} /> 
-                   {this.state.pictures.map(function(picture) {
-                      return <div className='col-md-3' id='showAlbum'><img src='/uploads/picture/image/30/sample.jpg' key = {picture.id} /></div>;
-                   })}      
+                   album = {this.state.album} />
+                   <div className='row'>
+                     {this.state.pictures.map(function(picture) {
+                        return <div className='col-md-3' id='showAlbum' key = {picture.id} ><img src={picture.image.url} /></div>;
+                     })}
+                   </div>
+        <div className='well' >
+          <ToAlbums />
+          <button className='btn btn-default' onClick={this.onDeleteAlbum.bind(this, this.state.album.id)} >Delete</button>
+          <ToAlbumEdit id= {this.state.album.id} />
+          <ToNewPicture id= {this.state.album.id} />
+        </div>
       </div>
       );
   }
 });
 
-var AlbumNew = React.createClass({
-  render: function() {
-    return <h1>New album</h1>
-  }
-});
-
-var NewAlbum = React.createClass({
-  render: function() {
-    return (
-      <Link to={'new'}>New album</Link>
-    );
-  }
-});
-
 var AlbumShow = React.createClass({
   render: function () {
-   // console.log(this.props.pictures);
     return (
       <div>
          <AlbumTitle title = {this.props.title} />
@@ -61,12 +72,21 @@ var AlbumShow = React.createClass({
   }
 });
 
-var Pic = React.createClass({
+var ToAlbums = React.createClass({
   render: function() {
-    return(
-      <div className='row'>
-      
-      </div>
-    );
+    return <Link to={'albums'}>To albums</Link>
+  }
+});
+var ToAlbumEdit = React.createClass({
+  render: function() {
+   return (<Link className='btn btn-default' to={'/albums/'+ this.props.id +'/edit'} >Edit</Link>
+   );
+  }
+});
+
+var ToNewPicture = React.createClass({
+  render: function() {
+   return (<Link className='btn btn-default' to={'/albums/'+ this.props.id +'/pictures/new'} >Add picture</Link>
+   );
   }
 });
