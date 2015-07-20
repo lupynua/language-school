@@ -1,6 +1,5 @@
 /*navbar*/
 
-$white: #f9f8fa;
 $darkgreen: #1c4419;
 
 .navgreen {
@@ -12,15 +11,15 @@ $darkgreen: #1c4419;
     > li > a {
         color: #ecf1ec !important;
         &:hover, &:focus {
-          color: $white !important;
+          color: white !important;
           background-color: $darkgreen !important; }}
     > .active {
       > a, > a:hover, >a:focus{
-        color: $white !important;
+        color: white !important;
         background-color: $darkgreen !important;}}
     > .open {
       > a, > a:hover, >a:focus{
-        color: $white !important;
+        color: white !important;
         background-color: $darkgreen !important;}}}}
 
 .menu-wrapper{

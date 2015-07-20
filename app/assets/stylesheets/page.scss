@@ -1,6 +1,7 @@
 // Place all the styles related to the Page controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 $gray: #E3E6E0;
 
 body, html {
@@ -29,7 +30,7 @@ body, html {
 
 .main-container{
   margin-top:70px;
-  min-height:350px;
+  min-height:370px;
 }
 
 #index-page{
@@ -47,7 +48,7 @@ body, html {
 }
 
 #presentation{
-  height: 200px;
+  min-height: 200px;
   background: #C3D4B7;
   margin-bottom:30px;
   border-radius:10px;
@@ -56,14 +57,14 @@ body, html {
     bottom:-20px;	
 }}
 
-#latest-news{
-  height:200px;
+#static-pages{
+  min-height:200px;
   background: #E6F6DA;
   margin-bottom:20px;
 }
 
-#events, #articles{
-  height:500px;
+#events, #articles, #materials{
+  min-height:500px;
   background:$gray; 
 }
 
@@ -76,19 +77,8 @@ body, html {
   padding-left:10px;
 }
 
-#courses{
-  height:150px;
-  margin-bottom:20px;
-  background:$gray;
-}
-
-#materials{
-  height:330px;
-  background:$gray;  
-}
 
 td, th {
   padding: 10px 10px;
 }
-
 

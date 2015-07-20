@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :pictures
       resources :articles, except: [:new, :edit]
       resources :events
+      resources :menus
     end
   end
 

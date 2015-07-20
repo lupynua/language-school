@@ -8,7 +8,7 @@
     = csrf_meta_tags
   
   %body
-    = react_component 'Navbar', {}, :nav
+    = react_component 'Navbar', {data: @menus}, :nav
     .container.main-container
       - if notice.present?
         %p.notice= notice

@@ -1,6 +1,3 @@
-/** @jsx React.DOM */
-
-
 var Carousel = React.createClass({
   render: function() {
     return (
