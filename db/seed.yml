@@ -1,0 +1,16 @@
+articles_users:
+  - article_id: 1
+    user_id: 1
+  - article_id: 2
+    user_id: 1
+
+articles:
+  - id: 1
+    status: 0
+    title: My Summer holidays!
+    body: <p>Summer is a wonderful season for me. It is the hottest and the best season of the year.The weather is always nice and sunny. It’s a real pleasure to spend some days out of a my town. So many people leave towns for countryside, seaside and mountains.</p><p>In summer schoolchildren do not go to school. They have summer holidays which are three months long. Children don’t have to get up early. There is no homework to do or lessons to learn. So they like holidays. I never stay in bed long in a bright summer morning. Sometimes my friends and I go to the cinema or to forest. Sometimes we play football or tennis in the yard.</p><p>Every summer I go to the country to stay with my grandmother for a month or two. I help Granny to work in the kitchen garden or to look after chickens and pigs. In the village I often go for long bike rides with my brother. There is a nice river Prut not far from my Granny’s place. Sometimes we go fishing or boating. I like to sit in silence for a while waiting for a fish to get caught and listening to the birds singing in the forest. I like to go to the beach in the morning when it is not too hot. I swim, sunbathe and play with my friends on the bank of the river.﻿</p>
+
+  - id: 2
+    status: 0
+    title: Coldplay "Speed of Sound"
+    body: <p><strong>Speed of Sound</strong> одна з найвідоміших пісень британської рок-групи <strong>Coldplay</strong>, у написанні якої брали участь усі члени групи. Ставши першим синглом з третього студійного альбому <strong>Coldplay X & Y</strong>, вона вийшла навесні 2005 року і відразу ж потрапила в <em>UK Singles Chart</em>, де і залишалася номером 1 в <strong>Top 75</strong> протягом 16 тижнів. Журнал <em>The Village Voice</em> назвав пісню <em>"unusually accomplished, fresh, and emotional"</em>.</p><p>Незважаючи на такий успіх, вокаліст групи <strong>Chris Martin</strong> зізнався, що <strong>"Speed of Sound"</strong> одна з найменш улюблених ним композицій. Група практично ніколи не грає її на концертах, і в своїх численних інтерв'ю <strong>Martin</strong> пояснює, що йому не подобається те, як звучить пісня в запису (Recording).</p>
