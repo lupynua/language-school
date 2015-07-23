@@ -1,5 +1,4 @@
 var Book = React.createClass({
-
   getInitialState: function () {
     return {
       book: []
@@ -81,10 +80,15 @@ var BookDescription = React.createClass({
 
 var BookAttachment = React.createClass({
   render: function() {
-    attach = this.props.attachment;
+    href_url = '';
+    if(this.props.attachment) {
+      href_url = this.props.attachment['url'];
+    }
+    console.log(href_url);
     return (
-       <a href="/uploads/book/attachment/3/book1.odt">{this.props.attachment}{this.props.children}</a>
+       <a href= {href_url} >{this.props.attachment}{this.props.children}</a>
     );
+
   }
 });
 
@@ -111,3 +115,4 @@ var ToBookEdit = React.createClass({
    );
   }
 });
+

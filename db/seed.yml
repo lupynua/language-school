@@ -53,3 +53,13 @@ events:
     place: Pasternaka St., 5, Lviv
     latitude: 49.83273
     longitude: 23.99922
+
+books:
+    title: "English Grammar"
+    description: "Present, past and future tenses. Conditions"
+    attachment: ""
+
+    title: "Passive voice"
+    description: "All rules of passive voice"
+    attachment: ""
+

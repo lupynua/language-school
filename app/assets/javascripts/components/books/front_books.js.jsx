@@ -1,38 +1,30 @@
-var LatestArticles = React.createClass({
-  getInitialState: function() {
+
+var BooksFront = React.createClass({
+  getInitialState: function () {
     return {
       books: []
     };
   },
-
-  componentDidMount: function() {
-    (new Bb.Collections.Books({path: "/latest"})).fetch({
-      success: function(collection) {
-        this.setState({books: collection.toJSON().map(function(book, index) {
-          return (
-            <li>
-              <h4>
-                {/*ugly link making, but router's <Link /> doesn't work due to context issue */}
-                <a className="h4"
-                   href={"#articles/" + article[0]}>
-                   {article[1]}
-                </a>
-              </h4>
-            </li>
-          );
-        })});
-      }.bind(this),
-      error: function(collection, response) {
-        console.error(response);
-      }
-    });
+  componentDidMount: function () {
+    this._books = new Bb.Collections.Books;
+    this._books.on('update', function () {
+      this.setState({books: this._books.toJSON()});
+    }, this);
+    this._books.fetch();
   },
-
-  render: function() {
+  componentWillUnmount: function () {
+    this._books.off('update');
+  },
+  render: function () {
+    var booksList = this.state.books.map(function (book) {
+      return (<Link to={'/books/' + book.id} className="list-group-item" key={book.id}>
+        <h4 className="list-group-item-heading">{book.title}</h4>
+        </Link>);
+    });
     return (
-      <ul className="list-unstyled">
-        {this.state.books}
-      </ul>
-    );
+      <div>
+        <div className="list-group">{booksList}</div>
+      </div>
+      );
   }
 });

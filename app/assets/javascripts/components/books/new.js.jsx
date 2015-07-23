@@ -1,9 +1,9 @@
 var BookNew = React.createClass({
   mixins: [ReactRouter.Navigation],
 
-  handleSubmit: function(article) {
-    var newArticle = new LanguageSchool.Models.Book({book});
-    BookNew.save({}, {
+  handleSubmit: function(book) {
+    var newBook = new Bb.Models.Book({book});
+    newBook.save({}, {
       success: function(model, response) {
         this.transitionTo("book", {bookId: response.id});
       }.bind(this),
@@ -14,10 +14,10 @@ var BookNew = React.createClass({
   },
   render: function() {
     return (
-      <div className='bookNew'>
+      <div>
+      <BackToBooks />
         <h2>New Book</h2>
         <BookForm handleSubmit={this.handleSubmit} buttonRole='Create book'/>
-        <BackToBooks />
       </div>
     );
   }
