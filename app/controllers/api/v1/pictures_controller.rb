@@ -22,11 +22,9 @@ class Api::V1::PicturesController < ApplicationController
   end
 
   def create
-    #binding.pry
     @picture = Picture.new(picture_params)
       if @picture.save
-         # render json: @picture, status: :created
-         redirect_to "http://localhost:3000/#/albums/#{picture_params[:album_id]}"
+        render json: @picture, status: :created
       else
         render json: @picture.errors, status: :unprocessable_entity
       end

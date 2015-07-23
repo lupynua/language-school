@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :pages
-      resources :albums
+      resources :albums do
+        resources :pictures
+      end
       resources :pictures
       resources :articles, except: [:new, :edit], concerns: :commentable do
         get :latest, on: :collection

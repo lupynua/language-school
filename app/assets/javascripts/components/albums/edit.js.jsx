@@ -23,6 +23,9 @@ var AlbumEdit = React.createClass({
 	editAlbum: function(album) {
     var alb = new Bb.Models.Album({id: this.props.params.albumId});
     var temp = album.album;
+    alb.on("invalid", function(model, error) {
+      bootbox.alert({message: error});
+    });
     alb.save(temp, {
       success: function(model, response, options) {
         this.setState({ album: model.toJSON(), pictures: model.toJSON().pictures});
@@ -41,7 +44,8 @@ var AlbumEdit = React.createClass({
                    buttonRole='Edit album'
                    title={this.state.album.title}
                    description={this.state.album.description}
-                   user_id={this.state.album.user_id} />
+                   user_id={this.state.album.user_id}
+                   album = {this.state.album} />
         <ToAlbums />
       </div>
     );

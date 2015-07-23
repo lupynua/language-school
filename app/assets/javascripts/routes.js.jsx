@@ -5,21 +5,19 @@ var DefaultRoute = ReactRouter.DefaultRoute,
 var Router = (
   <Route handler={App}>
    <DefaultRoute handler={FrontPage} />
-  /*albums*/
+  /*albums and pictures*/
     <Route name='albums' handler={Albums} path='/albums' />
     <Route name='albumNew' handler={AlbumNew} path='/albums/new' /> 
     <Route name='album' handler={Album} path='/albums/:albumId' />
     <Route name='albumEdit' handler={AlbumEdit} path='/albums/:albumId/edit' />
+    <Route name='pictures' handler={Pictures} path='/albums/:albumId/pictures' />
     <Route name='pictureNew' handler={PictureNew} path='/albums/:albumId/pictures/new' />
+    <Route name='pictureEdit' handler={PictureEdit} path='/albums/:albumId/pictures/:pictureId/edit' />
 
    <Route path='/menus' name='menus' handler={Menus} />
    <Route path='/menus/new' name='new_menu' handler={NewMenu} />
    <Route path='/menus/:menuId' name='menu_item' handler={Menu} />
    <Route path='/menus/:menuId/edit' name='edit' handler={EditMenu} />
-
-   <Route name='albums' handler={Albums} path='/albums' />
-   <Route name='albumNew' handler={AlbumNew} path='/albums/new' /> /*(!)write /albums/new before /albums/:albumId, otherwise new will be treated as id */
-   <Route name='album' handler={Album} path='/albums/:albumId' />
 
    <Route path='/articles' name='articles' handler={Articles} />
    <Route path='/articles/new' name='new_article' handler={NewArticle} />

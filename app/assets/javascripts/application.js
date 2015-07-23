@@ -23,6 +23,7 @@
 //= require underscore
 //= require backbone
 //= require strftime
+//= require bootbox
 //= require app
 //= require_tree ./models
 //= require_tree ./collections

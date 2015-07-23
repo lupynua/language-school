@@ -29,24 +29,7 @@ $color_suva_gray_approx: #888888;
     height: 100%;
   }
 }
-#myModal {
-  #content {
-    margin: 10px;
-    width: 600px;
-    height: 400px;
-    align: auto;
-  }
-  .modal-body {
-    width: 600px;
-    height: 400px;
-  }
-  .img-responsive {
-    min-width: 550px;
-    max-width: 550px;
-    min-height: 350px;
-    max-height: 350px;
-  }
-}
+
 a:hover {
   background-color: $white;
 }
@@ -56,4 +39,15 @@ a:hover {
   max-width: 300px;
   min-height: 200px;
   max-height: 200px;
+  cursor: pointer;
 }
+
+#content img {
+  min-width: 450px;
+  max-width: 650px;
+  width: 80%;
+  min-height: 250px;
+  max-height: 450px;
+  height: 100%;
+}
+
