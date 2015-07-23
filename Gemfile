@@ -15,6 +15,8 @@ gem 'devise'
 gem 'carrierwave', '~> 0.10.0'
 gem 'responders', '~> 2.1.0'
 gem 'mini_magick', '~> 4.2.7'
+gem 'bootbox-rails', '~>0.4'
+gem 'tinymce-rails'
 
 group :development, :test do
   gem 'spring'
