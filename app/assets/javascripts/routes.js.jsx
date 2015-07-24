@@ -1,6 +1,6 @@
 var DefaultRoute = ReactRouter.DefaultRoute,
-    Route = ReactRouter.Route,
-    Link = ReactRouter.Link;
+  Route = ReactRouter.Route,
+  Link = ReactRouter.Link;
 
 var Router = (
   <Route handler={App}>
@@ -19,5 +19,9 @@ var Router = (
     <Route path='/pages/:pageId' name='page' handler={Page} />
     <Route path='/pages/:pageId/edit' name='edit_page' handler={EditPage} />
 
+    <Route name='events' handler={Events} path='/events' />
+    <Route name='eventNew' handler={EventNew} path="/events/new" />
+    <Route name='event' handler={Event} path="/events/:eventId" />
+    <Route name='eventEdit' handler={EventEdit} path="/events/:eventId/edit" />
   </Route>
 );
