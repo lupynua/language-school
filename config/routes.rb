@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'application#index'
 
   devise_for :users
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
       resources :pictures
       resources :articles, except: [:new, :edit]
       resources :events
+      resources :menus
     end
   end
 
