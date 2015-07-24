@@ -14,6 +14,11 @@ var PageForm = React.createClass({
     this.setState(newState);
   },
 
+  componentDidMount: function() {
+    // TODO Mount TinyMCE, unmount tinyMCE
+    // tinyMCE.init 
+  },
+  
   onSubmit: function(e) {
     e.preventDefault();
     var page = {};
@@ -25,52 +30,54 @@ var PageForm = React.createClass({
 
   render: function() {
     return (
-      <form className="pageForm"  onSubmit={this.onSubmit}>
-        <div className="form-group">
-          <input
-            ref="title"
-            id="title"
-            value={this.state.page.title}
-            onChange={this.handleChange}
-            className="form-control"
-            type="text"
-            placeholder="Title"
-            required
-          />
-        </div>
+      <div className="pages_container">
+        <form className="pageForm"  onSubmit={this.onSubmit}>
+          <div className="form-group">
+            <input
+              ref="title"
+              id="title"
+              value={this.state.page.title}
+              onChange={this.handleChange}
+              className="form-control"
+              type="text"
+              placeholder="Title"
+              required
+            />
+          </div>
 
-        <div className="form-group">
-         
-          <textarea
-           ref="body"
-           id="body"
-           value={this.state.page.body}
-           onChange={this.handleChange}
-           className="tinymce form-control"
-           placeholder="Body"
-           rows="10"
-           cols="5"
-           required
-          />
+          <div className="form-group">
+           
+            <textarea
+             ref="body"
+             id="body"
+             value={this.state.page.body}
+             onChange={this.handleChange}
+             className="tinymce form-control"
+             placeholder="Body"
+             rows="10"
+             cols="5"
+             required
+            />
 
-        </div>
+          </div>
 
-        <div className="form-group">
+          <div className="form-group">
 
-          <input
-            ref="path"
-            id="path"
-            value={this.state.page.path}
-            onChange={this.handleChange}
-            className="form-control"
-            type="text"
-            placeholder="Path"
-            required
-          />
+            <input
+              ref="path"
+              id="path"
+              value={this.state.page.path}
+              onChange={this.handleChange}
+              className="form-control"
+              type="text"
+              placeholder="Path"
+              required
+            />
 
-        </div>
-        <input className="btn btn-primary" type="submit" value="Create" />
-      </form>
+          </div>
+          <input className="btn btn-primary" type="submit" value="Create" />
+        </form>
+      </div>
     );
   }
 });
