@@ -22,4 +22,3 @@ var NewPage = React.createClass({
     );
   }
 });
-

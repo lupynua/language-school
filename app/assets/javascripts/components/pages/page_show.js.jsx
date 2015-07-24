@@ -16,7 +16,7 @@ var Page = React.createClass({
 
   render: function() {
     return (
-      <div className="container-fluid">
+      <div className="container-fluid pages_container">
         <div className="row">
           <BackToPages className="h3 col-md-10"/>
           <EditPageLink params={{pageId: this.props.params.pageId}}/>
