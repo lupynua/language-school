@@ -29,3 +29,4 @@
 //= require tinymce
 //= require bootbox
 //= require_tree .
+//= require_tree ./components/manager

@@ -4,7 +4,6 @@ var DefaultRoute = ReactRouter.DefaultRoute,
 
 var Router = (
   <Route handler={App}>
-
    <DefaultRoute handler={FrontPage} />
 
    <Route path='/menus' name='menus' handler={Menus} />
@@ -30,5 +29,9 @@ var Router = (
     <Route name='eventNew' handler={EventNew} path="/events/new" />
     <Route name='event' handler={Event} path="/events/:eventId" />
     <Route name='eventEdit' handler={EventEdit} path="/events/:eventId/edit" />
+    
+  	<Route path='/' name='manager' handler={Index} />
+  	<Route path='/user' name='user' handler={Users} />
+  	<Route path='/articles' name='articles' handler={Articles} />
   </Route>
  );

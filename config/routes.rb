@@ -17,5 +17,6 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/manager', to: 'manager#index'
   get '/*path', to: 'application#index'
 end
