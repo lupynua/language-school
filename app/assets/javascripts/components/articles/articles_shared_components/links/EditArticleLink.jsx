@@ -3,9 +3,9 @@ var EditArticleLink = React.createClass({
     return (
       <Link
         to="edit_article"
-        className="btn btn-danger col-md-1"
+        className="btn btn-danger btn-sm col-md-1"
         {...this.props}>
-        Edit article
+        <span className="glyphicon glyphicon-pencil"> Edit</span>
       </Link>
     );
   }

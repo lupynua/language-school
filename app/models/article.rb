@@ -5,5 +5,5 @@ class Article < ActiveRecord::Base
   validates :body, presence: true
   validates :users, presence: true
 
-  enum status: [:publ, :priv]
+  enum status: [:shared, :restricted]
 end

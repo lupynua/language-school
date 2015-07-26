@@ -1,6 +1,12 @@
 var Articles = React.createClass({
+  mixins: [GetCurrentUserId],
+
   getInitialState: function() {
-    return {data: []};
+    return {data: [], current_user_id: ""};
+  },
+
+  componentWillMount: function() {
+    this.setState({current_user_id: this.getCurrentUserId()});
   },
 
   componentDidMount: function() {
@@ -20,7 +26,7 @@ var Articles = React.createClass({
       <div className="container-fluid">
         <div className="row">
           <div className="h1 col-md-11">Articles</div>
-          <NewArticleLink />
+          {this.state.current_user_id ? <NewArticleLink /> : false}
         </div>
         <ArticlesList data={this.state.data} />
       </div>

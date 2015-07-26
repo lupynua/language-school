@@ -3,9 +3,9 @@ var NewArticleLink = React.createClass({
     return (
       <Link
         to="new_article"
-        className="btn btn-primary col-md-1"
+        className="btn btn-primary btn-sm col-md-1"
         {...this.props}>
-        New Article
+        <span className="glyphicon glyphicon-file"> New</span>
       </Link>
     );
   }
