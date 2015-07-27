@@ -13,6 +13,14 @@
 	padding-bottom: 100px;
 }
 
-.form-group {
+.page-form {
 	width: 40%;
+}
+
+.page_item_list {
+	cursor:pointer;
+}
+
+.page_item_list:hover {
+	color:green;
 }
