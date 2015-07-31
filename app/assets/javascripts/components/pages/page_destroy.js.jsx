@@ -7,10 +7,7 @@ var DestroyPage = React.createClass({
         (new Bb.Models.Page({id: this.props.id})).destroy({
         success: function() {
           this.transitionTo('pages');
-        }.bind(this),
-        error: function(model, response) {
-          console.error(response);
-        }});
+        }.bind(this)});
       }
     }.bind(this));
   },

@@ -7,11 +7,7 @@ var Page = React.createClass({
     (new Bb.Models.Page({id: this.props.params.pageId})).fetch({
       success: function(model) {
         this.setState({page: model.toJSON()});
-      }.bind(this),
-      error: function(model, response) {
-        console.error(response);
-      }
-    });
+      }.bind(this)});
   },
 
   render: function() {

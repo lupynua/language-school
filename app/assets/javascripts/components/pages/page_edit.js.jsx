@@ -5,7 +5,7 @@ var EditPage = React.createClass({
     return {page: {}};
   },
   
-   componentDidMount: function() {
+  componentDidMount: function() {
     var id = this.props.params.pageId;
     (new Bb.Models.Page({id: id})).fetch({
       success: function(model) {
@@ -13,11 +13,7 @@ var EditPage = React.createClass({
           page: model.toJSON(),
           model: model
         });
-      }.bind(this),
-      error: function(model, response) {
-        console.error(response);
-      }
-    });
+      }.bind(this)});
   },
 
   handleSubmit: function(page) {
@@ -25,11 +21,7 @@ var EditPage = React.createClass({
       patch: true,
       success: function() {
         this.transitionTo("page", {pageId: this.state.page.id});
-      }.bind(this),
-      error: function(model, response) {
-        console.error(response);
-      }
-    });
+      }.bind(this)});
   },
 
   render: function() {
