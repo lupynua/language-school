@@ -5,11 +5,7 @@ var NewPage = React.createClass({
     (new Bb.Models.Page({page})).save({}, {
       success: function(model, response) {
         this.transitionTo("page", {pageId: response.id});
-      }.bind(this),
-      error: function(model, response) {
-        console.error(response);
-      }
-    });
+      }.bind(this)});
   },
 
   render: function() {

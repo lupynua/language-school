@@ -7,6 +7,8 @@ var FrontPage = React.createClass({
     <Presentation />
   </div>
   <div className='row' id='static-pages'>
+    <h3> Information</h3>
+    <PagesView />
   </div>
   <div className="row">
     <div className="col-md-4" id="events">

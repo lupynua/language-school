@@ -32,7 +32,7 @@ var PageForm = React.createClass({
     return (
       <div className="pages_container">
         <form className="pageForm"  onSubmit={this.onSubmit}>
-          <div className="form-group">
+          <div className="form-group page-form ">
             <input
               ref="title"
               id="title"
@@ -45,7 +45,7 @@ var PageForm = React.createClass({
             />
           </div>
 
-          <div className="form-group">
+          <div className="form-group page-form ">
            
             <textarea
              ref="body"
@@ -61,7 +61,7 @@ var PageForm = React.createClass({
 
           </div>
 
-          <div className="form-group">
+          <div className="form-group page-form ">
 
             <input
               ref="path"
