@@ -18,7 +18,9 @@ var DestroyArticle = React.createClass({
     return (
       <form onSubmit={this.handleSubmit} className="col-md-1">
         <div className="form-group">
-          <button className="btn btn-danger" ref="destroy">Delete article</button>
+          <button className="btn btn-danger btn-sm" ref="destroy">
+            <span className="glyphicon glyphicon-trash"> Delete</span>
+          </button>
         </div>
       </form>
     );

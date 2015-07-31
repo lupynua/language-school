@@ -53,11 +53,11 @@ var ArticleForm = React.createClass({
           <select
             ref="status"
             id="status"
-            defaultValue="publ"
+            value={this.state.article.status}
             onChange={this.handleChange}
             className="form-control btn-info">
-              <option value="publ">Public</option>
-              <option value="priv">Private</option>
+              <option value="shared">Public</option>
+              <option value="restricted">Private</option>
           </select>
         </div>
         <input className="btn btn-primary" type="submit" value="Post" />
