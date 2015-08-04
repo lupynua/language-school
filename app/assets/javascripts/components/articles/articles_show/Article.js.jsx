@@ -1,5 +1,5 @@
 var Article = React.createClass({
-  mixins: [GetCurrentUserId],
+  mixins: [ReactRouter.Navigation, GetCurrentUserId],
 
   getInitialState: function() {
     return {article: {}, current_user_id: "", user_ids: []};
@@ -18,9 +18,9 @@ var Article = React.createClass({
           user_ids: model.toJSON().users.map(function(user) {return user.id})
         });
       }.bind(this),
-      error: function(model, response) {
-        console.error(response);
-      }
+      error: function() {
+        this.transitionTo("articles");
+      }.bind(this)
     });
   },
 

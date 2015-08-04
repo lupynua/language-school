@@ -1,19 +1,24 @@
 class Api::V1::ArticlesController < ApplicationController
-  before_action :set_article, only: [:edit, :update, :destroy]
+  before_action :set_article, only: [:update, :destroy]
 
   def index
-    render json: user_signed_in? ? Article.all : Article.where(status: Article.shared)
+    render json: user_signed_in? ? Article.all : Article.shared
   end
 
   def latest
     scope = Article.order(id: :desc)
-    scope = scope.where(status: Article.shared) unless user_signed_in?
+    scope = scope.shared unless user_signed_in?
     render json: scope.limit(10), except: [:body, :created_at, :updated_at]
   end
 
   def show
     @article = Article.find(params[:id])
-    render json: @article.as_json(include: {users: {only: :id}})
+
+    if @article.restricted? && !user_signed_in?
+      head :forbidden
+    else
+      render json: @article.as_json(include: {users: {only: :id}})
+    end
   end
 
   def create
