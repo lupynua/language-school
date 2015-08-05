@@ -1,17 +1,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 $title-green: #487429;
 $body-green: #E6F6DA;
+
 .manager-container {
 	margin-top: 10px;
 	
 	.panel-heading { 
-		background-color: $title-green; 
+		background-color: $title-green !important; 
 		color: white !important;
 		span {
 			font-weight: bold;
-
-
 		}
 	}
 	.panel-body {

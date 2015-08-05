@@ -1,4 +1,4 @@
-var Index = React.createClass({
+var ManIndex = React.createClass({
   render: function() {
     return (
       <div className="row">

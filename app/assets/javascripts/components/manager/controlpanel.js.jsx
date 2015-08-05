@@ -8,11 +8,11 @@ var ControlPanel = React.createClass({
         </div>
         <div className="panel-body">
           <div className="list-group">
-            <a className="list-group-item" href="#user">
+            <a className="list-group-item" href="#man_user">
               <i className="glyphicon glyphicon-user"></i>
               <span> Users</span>
             </a>
-            <a className="list-group-item" href="#articles">
+            <a className="list-group-item" href="#man_articles">
               <i className="glyphicon glyphicon-paperclip"></i>
               <span> Articles</span>
             </a>
