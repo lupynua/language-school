@@ -25,12 +25,14 @@ group :development, :test do
   gem 'pry'
   gem 'better_errors'
   gem 'rspec-rails', '~> 3.0'
-  gem 'factory_girl'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'simplecov', '~> 0.9'
+  gem 'codeclimate-test-reporter', '~> 0.4.7'
 end
 
 group :production do
-  gem 'rails_12factor', '>= 0.0.3'
-  gem 'uglifier', '>= 1.3.0'
+  gem 'rails_12factor', '~> 0.0.3'
+  gem 'uglifier', '~> 1.3.0'
 end
 
 ruby '2.2.2'
