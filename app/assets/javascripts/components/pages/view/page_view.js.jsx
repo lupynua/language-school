@@ -22,7 +22,7 @@ var PageView = React.createClass({
   render: function() {
     return (
       <div className="container-fluid pages_container">
-       <p>{this.state.page.body}</p>
+        <p dangerouslySetInnerHTML={{__html: this.state.page.body}} />
       </div>
     );
   }
