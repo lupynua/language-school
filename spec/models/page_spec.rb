@@ -2,10 +2,7 @@ require_relative '../rails_helper'
 
 RSpec.describe Page, type: :model do
   it 'is valid with a title and body' do
-    page = Page.new(
-      title: 'Pages',
-      body: 'This is our pages page!',
-      path: 'Some path')
+    page = build(:page)
     expect(page).to be_valid
   end
 
@@ -25,5 +22,11 @@ RSpec.describe Page, type: :model do
     page = Page.new(path: nil)
     page.valid?
     expect(page.errors[:path]).to include('can\'t be blank')
+  end
+
+  it 'do not create duplicated page' do
+    create(:page, title: 'Dup')
+    page = build(:page, title: 'Dup')
+    expect(page.valid?).to eq(false)
   end
 end
