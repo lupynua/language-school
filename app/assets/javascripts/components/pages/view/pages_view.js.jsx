@@ -19,10 +19,12 @@ var PagesView = React.createClass({
     return (
       <div className="container-fluid">
         <div className="row">
-          <PagesViewList data={this.state.data} handleClick={this.handleClick} />
-        </div>
-        <div className="rendered_page">
-         <PageView params={{pageId: this.state.current_page}} />
+          <div className="col-md-4">
+            <PagesViewList data={this.state.data} handleClick={this.handleClick} />
+          </div>
+          <div className="col-md-4">
+           <PageView params={{pageId: this.state.current_page}} />
+          </div>
         </div>
       </div>
     );
