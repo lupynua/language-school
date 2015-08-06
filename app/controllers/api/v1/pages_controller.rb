@@ -25,7 +25,7 @@ module Api
         if @page.update(page_params)
           render json: @page
         else
-          status :unprocessable_entity
+          render json: @page.errors, status: :unprocessable_entity
         end
       end
 
