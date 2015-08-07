@@ -30,9 +30,16 @@ var Router = (
     <Route name='event' handler={Event} path="/events/:eventId" />
     <Route name='eventEdit' handler={EventEdit} path="/events/:eventId/edit" />
    
-   <Route path='/' name='manager' handler={ManIndex} />
-   <Route path='/man_user' name='manUser' handler={Users} />
-   <Route path='/man_articles' name='manArticles' handler={Articles} />
+   
    
   </Route>
  );
+
+var ManagerRouter = (
+  <Route handler={App}>
+    <DefaultRoute handler={FrontPage} />
+    <Route path='/' name='manager' handler={ManIndex} />
+    <Route path='/man_user' name='manUser' handler={Users} />
+    <Route path='/man_articles' name='manArticles' handler={Articles} />
+  </Route>
+);
