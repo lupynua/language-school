@@ -35,7 +35,6 @@ var PictureEdit = React.createClass({
     });
   },
   render: function() {
-      if(this.state.picture.image) {console.log(this.state.picture.image.url)};
     return (
       <div>
       <h2>Edit Picture</h2>

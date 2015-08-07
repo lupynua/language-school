@@ -1,5 +1,9 @@
 class Album < ActiveRecord::Base
   validates :title, presence: true
+  validates :description, length: {
+    maximum: 300,
+    tokenizer: lambda { |str| str.split(/\s+/) }
+  }
 
   has_many :pictures, dependent: :destroy
   accepts_nested_attributes_for :pictures

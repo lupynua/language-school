@@ -1,4 +1,4 @@
-require 'file_size_validator' 
+require 'file_size_validator'
 class Picture < ActiveRecord::Base
   validates :album, presence: true
   belongs_to :album
