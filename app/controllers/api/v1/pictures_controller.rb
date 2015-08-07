@@ -41,7 +41,7 @@ class Api::V1::PicturesController < ApplicationController
 
   def destroy
    @picture.destroy
-    render nothing: true, head: :no_content
+     head :no_content
   end
 
   private

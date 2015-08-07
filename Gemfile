@@ -15,10 +15,13 @@ gem 'geocoder'
 gem 'devise'
 gem 'carrierwave', '~> 0.10.0'
 gem 'responders', '~> 2.1.0'
-gem 'mini_magick', '~> 4.2.7'
+gem 'mini_magick', '~> 4.2.10'
 gem 'tinymce-rails'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'acts_as_tree', '~> 2.2.0'
+gem "fog"
+gem "figaro"
+
 
 group :development do
   gem 'spring'

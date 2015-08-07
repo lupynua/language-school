@@ -6,14 +6,12 @@ var PictureForm = React.createClass({
     };
   },
   componentDidMount: function () {
-    console.log(this.props.picture_id);
-    var pic = new Bb.Models.Picture({id: this.props.picture_id});
-    pic.fetch({
-      success: function(model, response, options) {
-        this.setState({ picture: model.toJSON()});
-      }.bind(this)
-    });
-    console.log(pic)
+    var pic = new Bb.Models.Picture();
+    // pic.fetch({
+    //   success: function(model, response, options) {
+    //     this.setState({ picture: model.toJSON()});
+    //   }.bind(this)
+    // });
     this.setState({picture: pic});
   },
   componentWillReceiveProps: function(nextProps) {
@@ -21,7 +19,6 @@ var PictureForm = React.createClass({
   },
   handleChange: function(e) {
     var newState = this.state.picture;
-    console.log(newState);
     newState[e.target.id] = e.target.value;
     this.setState(newState);
   },
