@@ -1,4 +1,4 @@
-require_relative '../rails_helper'
+require 'rails_helper'
 
 RSpec.describe Api::V1::PagesController, type: :controller do
   describe 'GET #index' do

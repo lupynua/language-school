@@ -1,4 +1,4 @@
-require_relative '../rails_helper'
+require 'rails_helper'
 
 RSpec.describe Page, type: :model do
   it 'is valid with a title and body' do
