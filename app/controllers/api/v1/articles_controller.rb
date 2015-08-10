@@ -1,4 +1,5 @@
 class Api::V1::ArticlesController < ApplicationController
+  before_action :check_authentification, only: [:create, :update, :destroy]
   before_action :set_article, only: [:update, :destroy]
 
   def index
@@ -46,6 +47,10 @@ class Api::V1::ArticlesController < ApplicationController
   end
 
   private
+
+  def check_authentification
+    head :forbidden unless user_signed_in?
+  end
 
   def set_article
     @article = current_user.articles.find(params[:id])
