@@ -1,3 +1,6 @@
 class ManagerController < ApplicationController
-  layout 'manager/manager'
+  layout 'manager'
+
+  before_action :authenticate_user!
+  before_filter :require_admin
 end

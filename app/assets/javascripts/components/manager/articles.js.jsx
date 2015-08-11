@@ -11,6 +11,7 @@ var Articles = React.createClass({
       }
       return (
         <div>
+          <Breadcrumbs pagetitle={this.state.pagetitle} />
           <Title pagetitle={this.state.pagetitle}  onTitleLinkClick={this.handleTitleLinkClick} />
           <hr/>
           {swicher}
