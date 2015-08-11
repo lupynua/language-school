@@ -14,27 +14,48 @@ var Navbar = React.createClass({
     }
   });
  },
+  
   render: function() {
-    var items = this.state.data.map(function(menu) {
-    return (        
-      <li>
-        <a key={menu.id} href={menu.url}>{menu.name}</a>
-     </li>
+    var items = this.state.data.map(function(item){
+      if (item.submenu.length > 0){
+        var submenu = item.submenu.map(function (child) {       
+        return (
+          <li>
+            <a href={ child.url }>{ child.name }</a>
+          </li>
           );
-        });
+         });
+        return (    
+          <li className='dropdown'>
+            <a href={ item.url } className="dropdown-toggle" data-toggle="dropdown"> { item.name } <span className="caret"></span></a>
+            <ul className="dropdown-menu">
+            {submenu}
+            </ul>
+          </li>
+        );        
+      }
+      else {
+      return (    
+        <li>
+          <a href={ item.url }> { item.name }</a>
+        </li>
+        );
+      }
+    });
     return (
+    <div>
       <nav className="navbar navbar-fixed-top navbar-default navgreen">
         <div className="container-fluid">
           <div className="navbar-header">
-           <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-          </button>
-            <a className="navbar-brand" href="#">Language School</a>
+            <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+            </button>
+          <a className="navbar-brand" href="#">Language School</a>
           </div>
-          <div className="collapse navbar-collapse" id="myNavbar">
-            <ul className="nav navbar-nav">
+          <div className="collapse navbar-collapse" id="myNavbar"> 
+            <ul className="nav navbar-nav">           
               {items}
             </ul>
             <ul className="nav navbar-nav navbar-right">
@@ -48,6 +69,7 @@ var Navbar = React.createClass({
           </div>
         </div>
       </nav>
+     </div>
      );
    }
 });
