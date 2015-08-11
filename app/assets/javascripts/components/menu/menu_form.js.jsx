@@ -27,6 +27,17 @@ var MenuForm = React.createClass({
    return (
     <form className="menuForm" onSubmit={this.onSubmit}>
 
+    <div className="form-group form-inline">
+       <input className="form-control" 
+       ref="parent_id"
+       id='parent_id'
+       value={this.state.parent_id}
+       onChange={this.handleChange}
+       className="form-control"
+       type="text"
+       placeholder="0 or ID of parent item"/>
+     </div>
+
      <div className="form-group form-inline">
        <input className="form-control" 
        ref="name"
@@ -46,10 +57,10 @@ var MenuForm = React.createClass({
        onChange={this.handleUrlChange}
        className="form-control"
        type="text"
-       placeholder="Url"/>
+       placeholder="#Url"/>
      </div>
 
-    <input className="btn btn-success" type="submit" value="Create menu item" />
+    <input className="btn btn-success" type="submit" value="Submit" />
 
   </form>
   );
