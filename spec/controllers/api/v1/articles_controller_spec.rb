@@ -170,9 +170,9 @@ RSpec.describe Api::V1::ArticlesController, type: :controller do
 
   describe 'PATCH #update' do
     let(:article) { create(:article_with_author) }
-    let(:params) do {
-      id: article.id,
-      article: FactoryGirl.attributes_for(:article, :modified) }
+    let(:params) do
+      { id: article.id,
+        article: FactoryGirl.attributes_for(:article, :modified) }
     end
 
     context 'when author is logged in' do
@@ -210,7 +210,7 @@ RSpec.describe Api::V1::ArticlesController, type: :controller do
 
   describe 'DELETE #destroy' do
     let(:article) { create(:article_with_author) }
-    let(:action) { -> { delete :destroy, id: article.id } }
+    let(:drop) { ->(id = article.id) { delete :destroy, id: id } }
 
     context 'when author is logged in' do
       let(:author) { article.users.first }
@@ -219,14 +219,14 @@ RSpec.describe Api::V1::ArticlesController, type: :controller do
       after { sign_out :user }
 
       it 'destroys article' do
-        action.call
+        drop.call
         expect(response).to have_http_status(:no_content)
       end
     end
 
     context 'when resource is not found' do
       it 'respond with forbidden' do
-        delete :destroy, id: (article.id + 1)
+        drop.call(article.id + 1)
         expect(response).to have_http_status(:forbidden)
       end
     end
@@ -235,7 +235,7 @@ RSpec.describe Api::V1::ArticlesController, type: :controller do
       it 'raise RecordNotFound exception' do
         sign_out :user
         sign_in create(:user)
-        expect(&action).to raise_exception(ActiveRecord::RecordNotFound)
+        expect(&drop).to raise_exception(ActiveRecord::RecordNotFound)
       end
     end
 
@@ -243,7 +243,7 @@ RSpec.describe Api::V1::ArticlesController, type: :controller do
       before { sign_out :user }
 
       it 'responds with forbidden' do
-        action.call
+        drop.call
         expect(response).to have_http_status(:forbidden)
       end
     end
