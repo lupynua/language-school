@@ -5,14 +5,11 @@ var Bb = {
   Helpers: {}
 };
 
-var RouteHandler = ReactRouter.RouteHandler,
-    Link = ReactRouter.Link;
-
 // main React component
 var App = React.createClass({
   render: function () {
     return (
-	    <ReactRouter.RouteHandler />
+      <ReactRouter.RouteHandler />
     );
   }
 });
