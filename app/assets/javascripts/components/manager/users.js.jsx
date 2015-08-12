@@ -3,12 +3,7 @@ var Users = React.createClass({
     return {checked: 'display', pagetitle: 'Users'};
   },
   render: function() {
-    var swicher;
-      if (this.state.checked == 'display') {
-        swicher = <UsersDisplay />;
-      } else {
-        swicher = <UserAdd />;
-      }
+    var swicher = this.state.checked == 'display' ? <UsersDisplay /> : <UserAdd />
       return (
         <div>
           <Breadcrumbs pagetitle={this.state.pagetitle} />

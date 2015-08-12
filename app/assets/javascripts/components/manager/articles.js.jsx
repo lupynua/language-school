@@ -3,12 +3,7 @@ var Articles = React.createClass({
     return {checked: 'display', pagetitle: 'Articles'};
   },
   render: function() {
-    var swicher;
-      if (this.state.checked == 'display') {
-        swicher = <ArticlesDisplay />;
-      } else {
-        swicher = <ArticlesAdd />;
-      }
+    var swicher = this.state.checked == 'display' ? <ArticlesDisplay /> : <ArticlesAdd />
       return (
         <div>
           <Breadcrumbs pagetitle={this.state.pagetitle} />
