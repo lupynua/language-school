@@ -39,7 +39,7 @@ var ManagerRouter = (
   <Route handler={App}>
     <DefaultRoute handler={FrontPage} />
     <Route path='/' name='manager' handler={ManIndex} />
-    <Route path='/man_user' name='manUser' handler={Users} />
-    <Route path='/man_articles' name='manArticles' handler={Articles} />
+    <Route path='/man_user' name='manUser' handler={ManUsers} />
+    <Route path='/man_articles' name='manArticles' handler={ManArticles} />
   </Route>
 );
