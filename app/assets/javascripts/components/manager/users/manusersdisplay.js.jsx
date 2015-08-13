@@ -1,4 +1,4 @@
-var UsersDisplay = React.createClass({
+var ManUsersDisplay = React.createClass({
   render: function() {
     return (
       <div className='panel-item'>
