@@ -41,7 +41,7 @@ module Api
       end
 
       def page_params
-        params.require(:page).permit(:title, :body, :path)
+        params.require(:page).permit(:title, :body)
       end
     end
   end

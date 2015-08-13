@@ -28,7 +28,6 @@ RSpec.describe Api::V1::PagesController, type: :controller do
 
       expect(content).to include('title')
       expect(content).to include('body')
-      expect(content).to include('path')
     end
   end
 
@@ -40,7 +39,6 @@ RSpec.describe Api::V1::PagesController, type: :controller do
       content = JSON.parse(response.body)
       expect(content).to include('title')
       expect(content).to include('body')
-      expect(content).to include('path')
     end
 
     context 'when field is missing' do
@@ -61,7 +59,6 @@ RSpec.describe Api::V1::PagesController, type: :controller do
       content = JSON.parse(response.body)
       expect(content).to include('title')
       expect(content).to include('body')
-      expect(content).to include('path')
     end
 
     context 'title is not empty' do
