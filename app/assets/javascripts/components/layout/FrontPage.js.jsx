@@ -13,6 +13,7 @@ var FrontPage = React.createClass({
   <div className="row">
     <div className="col-md-4" id="events">
       <h3>Events</h3>
+      <EventsWidget count="7" />
     </div>
     <div className="col-md-4" id="materials">
       <h3>Materials</h3>

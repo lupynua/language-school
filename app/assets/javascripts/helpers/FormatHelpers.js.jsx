@@ -1,8 +1,8 @@
 /* FieldView formatters */
 Bb.Helpers.dateFormatter = function (data) {
   var date = new Date(data);
-  var datePart = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear();
-  var timePart = date.getHours() + ':' + date.getMinutes();
+  var datePart =((date.getDate() < 10)?"0":"") + date.getDate() + '/' + (((date.getMonth()+1) < 10)?"0":"") + (date.getMonth()+1) +"/"+ date.getFullYear();
+  var timePart = ((date.getHours() < 10)?"0":"") + date.getHours() +":"+ ((date.getMinutes() < 10)?"0":"") + date.getMinutes();
   return datePart + " " + timePart;
 };
 
