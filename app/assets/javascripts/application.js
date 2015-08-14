@@ -22,6 +22,7 @@
 //= require react_router_ujs
 //= require underscore
 //= require backbone
+//= require strftime
 //= require app
 //= require_tree ./models
 //= require_tree ./collections
