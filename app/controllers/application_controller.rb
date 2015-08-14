@@ -16,4 +16,9 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
 
+  private
+
+  def check_authentification
+    head :forbidden unless user_signed_in?
+  end
 end

@@ -44,6 +44,10 @@ var Article = React.createClass({
         <ArticleStatus status={this.state.article.status} />
         <h2>{this.state.article.title}</h2>
         <p dangerouslySetInnerHTML={{__html: this.state.article.body}} />
+        <Comments
+          commentable_id={this.props.params.articleId}
+          commentable_type={'articles'}
+        />
       </div>
     );
   }

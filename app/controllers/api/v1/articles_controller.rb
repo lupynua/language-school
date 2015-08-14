@@ -48,10 +48,6 @@ class Api::V1::ArticlesController < ApplicationController
 
   private
 
-  def check_authentification
-    head :forbidden unless user_signed_in?
-  end
-
   def set_article
     @article = current_user.articles.find(params[:id])
   end
