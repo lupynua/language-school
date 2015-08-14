@@ -1,9 +1,7 @@
 /* FieldView formatters */
 Bb.Helpers.dateFormatter = function (data) {
   var date = new Date(data);
-  var datePart = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear();
-  var timePart = date.getHours() + ':' + date.getMinutes();
-  return datePart + " " + timePart;
+  return (strftime('%F %T', date));
 };
 
 Bb.Helpers.mapFormatter = function (data) {
