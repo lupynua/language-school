@@ -1,4 +1,4 @@
-var ArticlesDisplay = React.createClass({
+var ManArticlesDisplay = React.createClass({
   render: function() {
     return (
       <div className="row">

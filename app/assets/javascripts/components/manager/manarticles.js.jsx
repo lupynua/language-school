@@ -1,9 +1,9 @@
-var Users = React.createClass({
+var ManArticles = React.createClass({
   getInitialState: function(){
-    return {checked: 'display', pagetitle: 'Users'};
+    return {checked: 'display', pagetitle: 'Articles'};
   },
   render: function() {
-    var swicher = this.state.checked == 'display' ? <UsersDisplay /> : <UserAdd />
+    var swicher = this.state.checked == 'display' ? <ManArticlesDisplay /> : <ManArticlesAdd />
       return (
         <div>
           <Breadcrumbs pagetitle={this.state.pagetitle} />

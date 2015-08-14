@@ -1,4 +1,4 @@
-var UserAdd = React.createClass({
+var ManUserAdd = React.createClass({
   render: function() {
     return (
       <form className="new_user" action="/users">

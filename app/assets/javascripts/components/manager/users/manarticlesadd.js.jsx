@@ -1,4 +1,4 @@
-var ArticlesAdd = React.createClass({
+var ManArticlesAdd = React.createClass({
   render: function() {
     return (
       <form action="/users">
