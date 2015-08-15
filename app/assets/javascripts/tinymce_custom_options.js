@@ -1,5 +1,4 @@
 window.tinymce_custom_options = {
-    selector: "textarea#body",
     theme: "modern",
     width: 500,
     height: 200,

@@ -16,7 +16,7 @@ var PageForm = React.createClass({
 
   componentDidMount: function() {
     var self = this;
-    tinymce.init($.extend(window.tinymce_custom_options, {
+    tinymce.init($.extend($.extend(window.tinymce_custom_options, {selector: "textarea#body"}), {
       init_instance_callback: function(){
         if(self.state.page.body){
           tinymce.activeEditor.setContent(self.state.page.body);
