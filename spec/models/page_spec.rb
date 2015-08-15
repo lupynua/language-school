@@ -18,12 +18,6 @@ RSpec.describe Page, type: :model do
     expect(page.errors[:body]).to include('can\'t be blank')
   end
 
-  it 'is invalid without a path' do
-    page = Page.new(path: nil)
-    page.valid?
-    expect(page.errors[:path]).to include('can\'t be blank')
-  end
-
   it 'do not create duplicated page' do
     create(:page, title: 'Dup')
     page = build(:page, title: 'Dup')

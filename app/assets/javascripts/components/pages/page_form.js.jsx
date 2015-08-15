@@ -15,15 +15,35 @@ var PageForm = React.createClass({
   },
 
   componentDidMount: function() {
-    // TODO Mount TinyMCE, unmount tinyMCE
-    // tinyMCE.init 
+    var self = this;
+    tinymce.init($.extend($.extend(window.tinymce_custom_options, {selector: "textarea#body"}), {
+      init_instance_callback: function(){
+        if(self.state.page.body){
+          tinymce.activeEditor.setContent(self.state.page.body);
+        }
+      }
+    }));
+  },
+
+  componentDidUpdate: function(){
+    if(this.state.page.body && tinymce.activeEditor){
+      tinymce.activeEditor.setContent(this.state.page.body);
+    }
+  },
+
+  componentWillUnmount: function() {
+    tinymce.remove('#body');
   },
   
   onSubmit: function(e) {
     e.preventDefault();
     var page = {};
     for (var field in this.refs) {
-      page[field] = React.findDOMNode(this.refs[field]).value.trim();
+      if(field == 'body'){
+        page[field] = tinymce.activeEditor.getContent();
+      } else {
+        page[field] = React.findDOMNode(this.refs[field]).value.trim();
+      }
     }
     this.props.handleSubmit(page);
   },
@@ -31,7 +51,7 @@ var PageForm = React.createClass({
   render: function() {
     return (
       <div className="pages_container">
-        <form className="pageForm"  onSubmit={this.onSubmit}>
+        <form className="pageForm" onSubmit={this.onSubmit} >
           <div className="form-group page-form ">
             <input
               ref="title"
@@ -54,27 +74,9 @@ var PageForm = React.createClass({
              onChange={this.handleChange}
              className="tinymce form-control"
              placeholder="Body"
-             rows="10"
-             cols="5"
-             required
             />
-
           </div>
 
-          <div className="form-group page-form ">
-
-            <input
-              ref="path"
-              id="path"
-              value={this.state.page.path}
-              onChange={this.handleChange}
-              className="form-control"
-              type="text"
-              placeholder="Path"
-              required
-            />
-
-          </div>
           <input className="btn btn-primary" type="submit" value="Create" />
         </form>
       </div>
