@@ -19,21 +19,24 @@ gem 'bootbox-rails', '~>0.4'
 gem 'tinymce-rails'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'acts_as_tree', '~> 2.2.0'
-gem 'rspec-activemodel-mocks'
 
-group :development, :test do
+group :development do
   gem 'spring'
   gem 'pry'
   gem 'better_errors'
+end
+
+group :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'simplecov', '~> 0.9'
   gem 'codeclimate-test-reporter', '~> 0.4.7'
+  gem 'rspec-activemodel-mocks', '~> 1.0'
 end
 
 group :production do
   gem 'rails_12factor', '~> 0.0.3'
-  gem 'uglifier', '~> 1.3.0'
+  gem 'uglifier', '~> 2.7'
 end
 
 source 'https://rails-assets.org' do
