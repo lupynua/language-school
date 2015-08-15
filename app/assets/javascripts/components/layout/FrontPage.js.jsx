@@ -17,6 +17,7 @@ var FrontPage = React.createClass({
     </div>
     <div className="col-md-4" id="materials">
       <h3>Materials</h3>
+      <BooksFront/>
     </div>
     <div className="col-md-4" id="articles">
       <h3>Latest Articles</h3>

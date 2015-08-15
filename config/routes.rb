@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       end
       resources :events
       resources :menus
+      resources :books
     end
   end
 
