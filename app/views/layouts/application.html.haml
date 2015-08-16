@@ -9,12 +9,8 @@
     = tinymce_assets
 
   %body
-    = react_component 'Navbar', {data: @menus}, :nav
+    = react_component 'Navbar', {isSignedIn: user_signed_in?, notice: (notice if notice.present?), alert: (alert if alert.present?)}, :nav
     .container.main-container
-      - if notice.present?
-        %p.notice= notice
-      - if alert.present?
-        %p.alert= alert
       =react_router 'Router', 'HashLocation', {}, {'data-user-id': user_signed_in? ? current_user.id : ""}
     = react_component 'Footer', {}, :footer
     = yield

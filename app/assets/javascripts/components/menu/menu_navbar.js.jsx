@@ -14,28 +14,28 @@ var Navbar = React.createClass({
     }
   });
  },
-  
+
   render: function() {
     var items = this.state.data.map(function(item){
       if (item.submenu.length > 0){
-        var submenu = item.submenu.map(function (child) {       
+        var submenu = item.submenu.map(function (child) {
         return (
           <li>
             <a href={ child.url }>{ child.name }</a>
           </li>
           );
          });
-        return (    
+        return (
           <li className='dropdown'>
             <a href={ item.url } className="dropdown-toggle" data-toggle="dropdown"> { item.name } <span className="caret"></span></a>
             <ul className="dropdown-menu">
             {submenu}
             </ul>
           </li>
-        );        
+        );
       }
       else {
-      return (    
+      return (
         <li>
           <a href={ item.url }> { item.name }</a>
         </li>
@@ -54,17 +54,17 @@ var Navbar = React.createClass({
             </button>
           <a className="navbar-brand" href="#">Language School</a>
           </div>
-          <div className="collapse navbar-collapse" id="myNavbar"> 
-            <ul className="nav navbar-nav">           
+          <div className="collapse navbar-collapse" id="myNavbar">
+            <ul className="nav navbar-nav">
               {items}
             </ul>
             <ul className="nav navbar-nav navbar-right">
-              <li>
-                <a href='#'>Log In <span className="glyphicon glyphicon-log-in"></span></a>
-              </li>
-              <li>
-                <a href='#'>Sign Up <span className="glyphicon glyphicon-user"></span></a>
-              </li>
+              <ul className="nav navbar-nav navbar-right">
+              <li><p id="notice">{this.props.notice}</p></li>
+              <li><p>{this.props.alert}</p></li>
+              {this.props.isSignedIn ? <SignOutLink /> : <SignInLink />}
+              {this.props.isSignedIn ? false : <SignUpLink />}
+            </ul>
             </ul>
           </div>
         </div>
