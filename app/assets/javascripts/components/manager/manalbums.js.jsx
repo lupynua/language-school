@@ -1,9 +1,9 @@
-var ManArticles = React.createClass({
+var ManAlbums = React.createClass({
   getInitialState: function(){
-    return {checked: 'display', pagetitle: 'Articles management'};
+    return {checked: 'display', pagetitle: 'Albums management'};
   },
   render: function() {
-    var swicher = this.state.checked == 'display' ? <Articles /> : <NewArticle />
+    var swicher = this.state.checked == 'display' ? <Albums /> : <AlbumNew />
       return (
         <div>
           <Breadcrumbs pagetitle={this.state.pagetitle} />

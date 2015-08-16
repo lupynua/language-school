@@ -8,7 +8,7 @@ var Title = React.createClass({
         <div className='col-xs-12 col-sm-6 col-md-3'>
           <div className='btn-group pull-right'>
             <button id='display' onClick={this.handleClick} className='btn btn-default btn-md'>Display</button>
-            <button id='add' onClick={this.handleClick} className='btn btn-default btn-md'>Add</button>
+            <button id='add' onClick={this.handleClick} className='btn btn-default btn-md'>New</button>
           </div>
         </div>
       </div>

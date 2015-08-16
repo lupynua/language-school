@@ -1,15 +1,17 @@
-var ManArticles = React.createClass({
+var ManPages = React.createClass({
   getInitialState: function(){
-    return {checked: 'display', pagetitle: 'Articles management'};
+    return {checked: 'display', pagetitle: 'Pages management'};
   },
   render: function() {
-    var swicher = this.state.checked == 'display' ? <Articles /> : <NewArticle />
+    var swicher = this.state.checked == 'display' ? <Pages /> : <NewPage />
       return (
         <div>
           <Breadcrumbs pagetitle={this.state.pagetitle} />
           <Title pagetitle={this.state.pagetitle}  onTitleLinkClick={this.handleTitleLinkClick} />
           <hr/>
+          <div className="pages-wrapper">
           {swicher}
+          </div>
         </div>
     );
   },
