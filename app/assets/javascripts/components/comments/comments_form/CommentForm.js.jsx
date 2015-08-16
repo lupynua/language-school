@@ -20,6 +20,7 @@ var CommentForm = React.createClass({
             className="form-control"
             type="text"
             placeholder="Write something..."
+            required
           />
         </div>
         <input className="btn btn-primary" type="submit" value="Comment" />
