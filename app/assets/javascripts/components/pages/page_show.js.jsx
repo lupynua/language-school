@@ -13,7 +13,7 @@ var Page = React.createClass({
   render: function() {
     return (
       <div className="container-fluid pages_container">
-        <div className="row">
+        <div className="row wrapper-page-buttons">
           <BackToPages className="h3 col-md-10"/>
           <EditPageLink params={{pageId: this.props.params.pageId}}/>
           <DestroyPage id={this.state.page.id} />

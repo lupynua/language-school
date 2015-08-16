@@ -16,9 +16,9 @@ var ControlPanel = React.createClass({
               <i className="glyphicon glyphicon-paperclip"></i>
               <span> Pages</span>
             </a>
-            <a className="list-group-item" href="#courses">
+            <a className="list-group-item" href="#man_articles">
               <i className="glyphicon glyphicon-education"></i>
-              <span> Courses</span>
+              <span> Articles</span>
             </a>
             <a className="list-group-item" href="#man_books">
               <i className="glyphicon glyphicon-book"></i>
