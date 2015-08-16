@@ -1,9 +1,9 @@
-var ManArticles = React.createClass({
+var ManPages = React.createClass({
   getInitialState: function(){
-    return {checked: 'display', pagetitle: 'Articles'};
+    return {checked: 'display', pagetitle: 'Pages management'};
   },
   render: function() {
-    var swicher = this.state.checked == 'display' ? <ManArticlesDisplay /> : <ManArticlesAdd />
+    var swicher = this.state.checked == 'display' ? <Pages /> : <NewPage />
       return (
         <div>
           <Breadcrumbs pagetitle={this.state.pagetitle} />

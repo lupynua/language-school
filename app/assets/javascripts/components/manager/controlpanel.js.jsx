@@ -12,25 +12,25 @@ var ControlPanel = React.createClass({
               <i className="glyphicon glyphicon-user"></i>
               <span> Users</span>
             </a>
-            <a className="list-group-item" href="#man_articles">
+            <a className="list-group-item" href="#man_pages">
               <i className="glyphicon glyphicon-paperclip"></i>
-              <span> Articles</span>
+              <span> Pages</span>
             </a>
             <a className="list-group-item" href="#courses">
               <i className="glyphicon glyphicon-education"></i>
               <span> Courses</span>
             </a>
-            <a className="list-group-item" href="#materials">
+            <a className="list-group-item" href="#man_books">
               <i className="glyphicon glyphicon-book"></i>
-              <span> Materials</span>
+              <span> Books</span>
             </a>
-            <a className="list-group-item" href="#events">
+            <a className="list-group-item" href="#man_albums">
               <i className="glyphicon glyphicon-star"></i>
-              <span> Events</span>
+              <span> Albums</span>
             </a>
-            <a className="list-group-item" href="#exams">
+            <a className="list-group-item" href="#man_menu">
               <i className="glyphicon glyphicon-edit"></i>
-              <span> Exams</span>
+              <span> Menu</span>
             </a>
           </div>
         </div>

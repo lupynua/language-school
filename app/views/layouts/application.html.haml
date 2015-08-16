@@ -17,3 +17,4 @@
         %p.alert= alert
       =react_router 'Router', 'HashLocation', {}, {'data-user-id': user_signed_in? ? current_user.id : ""}
     = react_component 'Footer', {}, :footer
+    = yield
