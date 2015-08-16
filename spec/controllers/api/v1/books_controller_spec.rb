@@ -1,6 +1,6 @@
 require 'rails_helper'
 
- RSpec.describe Api::V1::BooksController, type: :controller do
+RSpec.describe Api::V1::BooksController, type: :controller do
     describe "GET #index" do
         it "assigns @books" do
           book = create(:book)
@@ -68,7 +68,7 @@ require 'rails_helper'
     it "located the requested book" do
       book = create(:book)
       put :update, id: book.id, book: FactoryGirl.attributes_for(:book)
-      expect(assigns(:book)).to eq(book)      
+      expect(assigns(:book)).to eq(book)
     end
     end
     it "changes book's attributes" do
@@ -92,7 +92,7 @@ require 'rails_helper'
    it "deletes the book" do
    	book = create(:book)
      expect{
-       delete :destroy, id: book.id, book: FactoryGirl.attributes_for(:book), format: :json      
+       delete :destroy, id: book.id, book: FactoryGirl.attributes_for(:book), format: :json
      }.to change(Book, :count).by(-1)
    end
    it 'redirects to #index' do
@@ -100,5 +100,5 @@ require 'rails_helper'
       delete :destroy, id: book.id
       expect(response).to be_success
     end
- end
+end
 end
