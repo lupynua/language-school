@@ -39,7 +39,7 @@ class Api::V1::AlbumsController < ApplicationController
 
   def destroy
     @album.destroy
-    render nothing: true, head: :no_content
+    head :no_content
   end
 
   private

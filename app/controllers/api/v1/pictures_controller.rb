@@ -1,5 +1,7 @@
 class Api::V1::PicturesController < ApplicationController
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
+  respond_to :json
+  skip_before_action :verify_authenticity_token
 
   def index
     @album = Album.find(params[:album_id])
@@ -34,11 +36,12 @@ class Api::V1::PicturesController < ApplicationController
     else
       render json: @picture.errors, status: :unprocessable_entity
     end
+
   end
 
   def destroy
    @picture.destroy
-    render nothing: true, head: :no_content
+     head :no_content
   end
 
   private

@@ -4,6 +4,7 @@ gem 'rails', '4.2.1'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.4'
+gem 'bootbox-rails', '~>0.4'
 gem 'jquery-rails'
 gem 'react-rails', '~> 1.0'
 gem 'react-router-rails', '~>0.13.3'
@@ -14,11 +15,13 @@ gem 'geocoder'
 gem 'devise'
 gem 'carrierwave', '~> 0.10.0'
 gem 'responders', '~> 2.1.0'
-gem 'mini_magick', '~> 4.2.7'
-gem 'bootbox-rails', '~>0.4'
+gem 'mini_magick', '~> 4.2.10'
 gem 'tinymce-rails'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'acts_as_tree', '~> 2.2.0'
+gem "fog"
+gem "figaro"
+
 
 group :development do
   gem 'spring'

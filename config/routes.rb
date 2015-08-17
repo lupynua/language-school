@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :pages
-      resources :albums
+      resources :albums do
+        resources :pictures
+      end
       resources :pictures
       resources :articles, except: [:new, :edit], concerns: :commentable do
         get :latest, on: :collection
@@ -24,4 +26,5 @@ Rails.application.routes.draw do
 
   get '/manager', to: 'manager#index'
   get '/*path', to: 'application#index'
+
 end

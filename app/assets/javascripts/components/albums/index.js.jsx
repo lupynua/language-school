@@ -19,21 +19,24 @@ var Albums  = React.createClass({
   componentDidMount: function () {
     this.getData();
   },
-  
+
   render: function () {
     return (
       <div className='row'>
-        <h1>Albums list</h1>
+        <h1>Albums</h1>
         {this.state.albums.map(function(album) {
           return <AlbumView key = {album.id}
                             id = {album.id}
                             image = {album.pictures[0] ? album.pictures[0].image.url : 'assets/sample.jpg'}
+                            title = {album.title}
                             description = {album.description}
-                            author = {album.user_id}/>;                       
+                            author = {album.user_id}/>;
         })}
-                 <NewAlbum  />
+                <div className='col-md-12 well' >
+                  <NewAlbumLink  />
+                </div>
       </div>
-    ); 
+    );
   }
 });
 
@@ -42,7 +45,7 @@ var AlbumView = React.createClass({
     return (
       <div className='col-md-4'>
         <div className='thumbnail'>
-          <AlbumImage image = {this.props.image} id = {this.props.id} /> 
+          <AlbumImage image = {this.props.image} id = {this.props.id} />
           <div className='caption'>
             <AlbumTitle title = {this.props.title} />
             <AlbumDescription description = {this.props.description.substring(0,30)} >...</AlbumDescription>
@@ -85,10 +88,5 @@ var AlbumAuthor = React.createClass({
   }
 });
 
-var NewAlbum = React.createClass({
-  render: function() {
-    return (
-        <Link to={'albumNew'}>New album</Link>
-    );
-  }
-});
+
+
