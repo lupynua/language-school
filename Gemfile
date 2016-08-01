@@ -21,7 +21,7 @@ gem 'rails-i18n', '~> 4.0.0'
 gem 'acts_as_tree', '~> 2.2.0'
 gem "fog"
 gem "figaro"
-
+gem 'therubyracer'
 
 group :development do
   gem 'spring'
