@@ -17,7 +17,7 @@ pickle-email-*.html
 /.bundle
 /vendor/bundle
 
-Gemfile.lock
+#Gemfile.lock
 
 .rvmrc
 
