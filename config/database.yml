@@ -2,7 +2,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  host: /tmp
+#  host: /tmp
 
 development:
   <<: *default
@@ -15,5 +15,5 @@ test:
 production:
   <<: *default
   database: language-school_production
-  username: language-school
-  password: <%= ENV['LANGUAGE-SCHOOL_DATABASE_PASSWORD'] %>
+ # username: language-school
+ # password: <%= ENV['LANGUAGE-SCHOOL_DATABASE_PASSWORD'] %>

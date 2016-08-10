@@ -1,4 +1,5 @@
 require 'rails_helper'
+
 RSpec.describe Api::V1::AlbumsController, type: :controller do
   describe 'GET #index' do
     it 'responds with status ok' do
