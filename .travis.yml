@@ -8,6 +8,7 @@ cache:
 env:
 - DB=postgresql
 script:
+- gcloud init
 - gcloud compute --project "language-school-1470306834661" ssh --zone "europe-west1-b"
   "rubyproject1"
 - bundle exec rake db:drop RAILS_ENV=test
