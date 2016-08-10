@@ -25,3 +25,6 @@ before_install:
 - gcloud auth activate-service-account --key-file client-secret.json
 install:
 - gcloud compute --project "language-school-1470306834661" ssh --zone "europe-west1-b" "rubyproject1"
+- ls
+- cd ../
+- cd ../
