@@ -8,7 +8,6 @@ cache:
 env:
 - DB=postgresql
 script:
-- gcloud init
 - gcloud compute --project "language-school-1470306834661" ssh --zone "europe-west1-b"
   "rubyproject1"
 - bundle exec rake db:drop RAILS_ENV=test
@@ -25,4 +24,5 @@ before_install:
 #- if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; export CLOUDSDK_CORE_DISABLE_PROMPTS=1; curl https://sdk.cloud.google.com | bash; fi
 - tar -xzf credentials.tar.gz
 - mkdir -p lib
+- gcloud init
 - gcloud auth activate-service-account --key-file client-secret.json
