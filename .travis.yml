@@ -4,7 +4,6 @@ rvm:
 env:
   - DB=postgresql
 script:
-  - gcloud config set project `language-school-1470306834661`
   - bundle exec rake db:drop RAILS_ENV=test
   - bundle exec rake db:create RAILS_ENV=test
   - bundle exec rake db:migrate RAILS_ENV=test
