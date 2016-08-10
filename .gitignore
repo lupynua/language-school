@@ -18,7 +18,9 @@ pickle-email-*.html
 /vendor/bundle
 
 #Gemfile.lock
-
+client-secret.json
+api_key.rb
+.tar.gz
 .rvmrc
 
 /node_modules

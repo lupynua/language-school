@@ -1,16 +1,19 @@
 language: ruby
 rvm:
-  - 2.2.2
+- 2.2.2
 env:
-  - DB=postgresql
+- DB=postgresql
 script:
-  - gcloud compute --project "language-school-1470306834661" ssh --zone "europe-west1-b" "rubyproject1"
-  - bundle exec rake db:drop RAILS_ENV=test
-  - bundle exec rake db:create RAILS_ENV=test
-  - bundle exec rake db:migrate RAILS_ENV=test
-  - bundle exec rspec
+- gcloud compute --project "language-school-1470306834661" ssh --zone "europe-west1-b"
+  "rubyproject1"
+- bundle exec rake db:drop RAILS_ENV=test
+- bundle exec rake db:create RAILS_ENV=test
+- bundle exec rake db:migrate RAILS_ENV=test
+- bundle exec rspec
 addons:
   code_climate:
     repo_token:
-      secure: "Phin9bo9gKyIIAEpmkLWGAvQaKNfdMn6jxogMGPvlmTq/+7U/TjGZYVC85PGrX7QcC2/kgjWDMifF/96f6z+1JfYR9UdBzgbsSpaBNY5B1LaUxHTNiTuHKw/7TTyzHe6MRchVEp0ZBI0I7Z34Bd6DzNy0N7x3nKQDiAtC5Gb3VAaq6R+2eW6m0L81HQ9HfNtblw6Ts2CXjGxBbbvilJS2cNCatXAdKbs6A6HLKL0KgnundPGyveoHSWGx6gbyywDdUT//nmVr5uYFuX0QamOKKXChh7XMsDOJSrQQCUiY3T/h9qAPUq/xqWu2QsYlBCiL/thTB3FqR0/W7MGHkSov4J/0exmEg4xcWAe6lF+TUcAMGDuGeBs1omYlTDtD9ycj4o+jdWQDcBL/sX8NpL9uPme8ViNPp9kOw6pY4xIZYnWHM4DG5KF5tAsBRqepkBRby+Et05U0XsQTJEJBfV1LsrbH2jHGx9UHfW5EI65RAq/nErzUIhqF9W5KJCzczwNHb6pse7sA/03BBQXum5PZ7ZR8QRj46Op6e4eAPTBSOb1FKSRKtjKBPEKoZz1bPI784L6zRwugf4xtMMW71vHDZWHm/4KxBTidiZST47rHmlvFTxO4yfKcpr6LGZuNUXMwzVns5Ibp9dOCKvjZ+R5qnlTkZL7em0oOgvXPrAn4N0="
-
+      secure: Phin9bo9gKyIIAEpmkLWGAvQaKNfdMn6jxogMGPvlmTq/+7U/TjGZYVC85PGrX7QcC2/kgjWDMifF/96f6z+1JfYR9UdBzgbsSpaBNY5B1LaUxHTNiTuHKw/7TTyzHe6MRchVEp0ZBI0I7Z34Bd6DzNy0N7x3nKQDiAtC5Gb3VAaq6R+2eW6m0L81HQ9HfNtblw6Ts2CXjGxBbbvilJS2cNCatXAdKbs6A6HLKL0KgnundPGyveoHSWGx6gbyywDdUT//nmVr5uYFuX0QamOKKXChh7XMsDOJSrQQCUiY3T/h9qAPUq/xqWu2QsYlBCiL/thTB3FqR0/W7MGHkSov4J/0exmEg4xcWAe6lF+TUcAMGDuGeBs1omYlTDtD9ycj4o+jdWQDcBL/sX8NpL9uPme8ViNPp9kOw6pY4xIZYnWHM4DG5KF5tAsBRqepkBRby+Et05U0XsQTJEJBfV1LsrbH2jHGx9UHfW5EI65RAq/nErzUIhqF9W5KJCzczwNHb6pse7sA/03BBQXum5PZ7ZR8QRj46Op6e4eAPTBSOb1FKSRKtjKBPEKoZz1bPI784L6zRwugf4xtMMW71vHDZWHm/4KxBTidiZST47rHmlvFTxO4yfKcpr6LGZuNUXMwzVns5Ibp9dOCKvjZ+R5qnlTkZL7em0oOgvXPrAn4N0=
+before_install:
+- openssl aes-256-cbc -K $encrypted_d870ab00fa2d_key -iv $encrypted_d870ab00fa2d_iv
+  -in credentials.tar.gz.enc -out credentials.tar.gz -d
