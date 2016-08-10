@@ -6,7 +6,7 @@ cache:
   directories:
     - "$HOME/google-cloud-sdk/"
 env:
-- DB=postgresql
+- PATH=$PATH:${HOME}/google-cloud-sdk/bin
 script:
 - gcloud compute --project "language-school-1470306834661" ssh --zone "europe-west1-b"
   "rubyproject1"
