@@ -8,7 +8,7 @@ cache:
 env:
 - PATH=$PATH:${HOME}/google-cloud-sdk/bin
 script:
-- gcloud compute --project "language-school-1470306834661" ssh --zone "europe-west1-b" "test" --command "gem env && git clone https://github.com/lupynua/language-school.git && cd language-school/ && bundle install && rake db:drop RAILS_ENV=test && rake db:create RAILS_ENV=test && rake db:migrate RAILS_ENV=test && bundle exec rspec && puma -b tcp://10.132.0.3:3000 -e test &"
+- gcloud compute --project "language-school-1470306834661" ssh --zone "europe-west1-b" "test" --command "gem env && git clone https://github.com/lupynua/language-school.git && cd language-school/ && bundle install && rake db:drop RAILS_ENV=test && rake db:create RAILS_ENV=test && rake db:migrate RAILS_ENV=test && bundle exec rspec"
 #- gcloud compute --project "language-school-1470306834661" ssh --zone "europe-west1-b" "test2" --command "cd language-school/"
 #- gcloud compute --project "language-school-1470306834661" ssh --zone "europe-west1-b" "test2" --command "~/language-school bundle install"
 #- gcloud compute --project "language-school-1470306834661" ssh --zone "europe-west1-b" "test2" --command "bundle install --deployment"
