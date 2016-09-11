@@ -25,4 +25,4 @@ before_install:
 - mkdir -p lib
 - gcloud auth activate-service-account --key-file client-secret.json
 - ssh-keygen -q -N "" -f ~/.ssh/google_compute_engine
-#- gcloud compute --project "language-school-1470306834661" instances create "test" --machine-type "n1-standard-1" --image "/language-school-1470306834661/rubyproject" --zone "europe-west1-b"
+- gcloud compute --project "language-school-1470306834661" instances create "test" --machine-type "n1-standard-1" --image "/language-school-1470306834661/rubyproject" --zone "europe-west1-b"
