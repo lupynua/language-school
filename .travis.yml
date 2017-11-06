@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-- 2.2.2
+- 2.3.3
 cache:
   directories:
   - "$HOME/google-cloud-sdk/"
@@ -31,4 +31,4 @@ before_install:
 - ssh-keygen -q -N "" -f ~/.ssh/google_compute_engine
 - gcloud compute --project "language-school-1470306834662" instances create "test"
   --machine-type "n1-standard-1" --image "rubyproject" --image-project "language-school-1470306834662"
-  --zone "europe-west3-b"
+  --zone "europe-west3-b" --tags "http-server"
