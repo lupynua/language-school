@@ -30,5 +30,5 @@ before_install:
 - gcloud auth activate-service-account --key-file client-secret.json
 - ssh-keygen -q -N "" -f ~/.ssh/google_compute_engine
 - gcloud compute --project "language-school-1470306834662" instances create "test"
-  --machine-type "n1-standard-1" --image "rubyproject" --image-project "language-school-1470306834662"
+  --machine-type "n1-standard-1" --image "rubyprojectfinal" --image-project "language-school-1470306834662"
   --zone "europe-west3-b" --tags "http-server"
