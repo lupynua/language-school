@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.1'
+gem 'rails', '~> 4.2.1'
+gem 'localtunnel'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.4'
@@ -16,7 +17,7 @@ gem 'devise'
 gem 'puma'
 gem 'carrierwave', '~> 0.10.0'
 gem 'responders', '~> 2.1.0'
-gem 'mini_magick', '~> 4.2.10'
+gem 'mini_magick'
 gem 'tinymce-rails'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'acts_as_tree', '~> 2.2.0'
@@ -47,4 +48,4 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-strftime'
 end
 
-ruby '2.2.2'
+ruby '2.3.3'
