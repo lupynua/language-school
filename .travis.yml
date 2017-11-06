@@ -11,7 +11,7 @@ script:
   "test" --command "rm -rf language-school && git clone https://github.com/lupynua/language-school.git
   && cd language-school/ && bundle install && rake db:drop RAILS_ENV=test && rake
   db:create RAILS_ENV=test && rake db:migrate RAILS_ENV=test && bundle exec rspec
-  && rm -rf spec && ruby deploy.rb &"
+  && rm -rf spec && bundle exec puma -e test -p 3000 -d"
 - bundle exec rake db:drop RAILS_ENV=test
 - bundle exec rake db:create RAILS_ENV=test
 - bundle exec rake db:migrate RAILS_ENV=test
